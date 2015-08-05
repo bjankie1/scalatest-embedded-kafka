@@ -26,7 +26,7 @@ trait EmbeddedKafka extends SuiteMixin { self: Suite =>
 
   implicit val executionContext = ExecutionContext.fromExecutorService(executorService)
 
-  def config: EmbeddedKafkaConfig = EmbeddedKafkaConfig(zooKeeperPort = 12345)
+  implicit val config: EmbeddedKafkaConfig = EmbeddedKafkaConfig()
 
   /**
    * Starts a ZooKeeper instance and a Kafka broker, then executes the body passed as a parameter.
